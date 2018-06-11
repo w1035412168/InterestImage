@@ -1,10 +1,12 @@
 package com.example.admin.interestimage.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.EventLog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +19,9 @@ import com.example.admin.interestimage.bean.InterestImage;
 import com.example.admin.interestimage.net.HttpResult;
 import com.example.admin.interestimage.net.HttpUtil;
 import com.example.admin.interestimage.net.RetrofitUtil;
+import com.example.admin.interestimage.ui.activity.BigImage;
 
+import org.greenrobot.eventbus.EventBus;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
@@ -64,7 +68,10 @@ public class InterestingFragment extends Fragment {
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
+                InterestImage interestImage=(InterestImage) adapter.getItem(position);
+                EventBus.getDefault().postSticky(interestImage);
+                Intent intent=new Intent(getActivity(),BigImage.class);
+                startActivity(intent);
             }
         });
 //        RetrofitUtil.getImage(new Callback<HttpResult<List<InterestImage>>>() {

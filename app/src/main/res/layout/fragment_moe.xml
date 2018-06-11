@@ -6,9 +6,10 @@
     tools:context=".ui.fragment.MoeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<com.youth.banner.Banner
+    android:layout_width="match_parent"
+    android:id="@+id/banner"
+    android:layout_height="150dp">
+</com.youth.banner.Banner>
 
 </FrameLayout>

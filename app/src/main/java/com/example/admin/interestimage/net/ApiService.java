@@ -13,4 +13,5 @@ public interface ApiService {
     Flowable<HttpResult<List<InterestImage>>> getInterestImage();
     @GET("getinterest.php")
     Call<HttpResult<List<InterestImage>>> getInterest();
+
 }

@@ -33,4 +33,5 @@ public class HttpUtil {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(subscriber);
     }
+
 }

@@ -16,6 +16,8 @@ import com.example.admin.interestimage.ui.fragment.MoeFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, BottomNavigationBar.OnTabSelectedListener {
     private ViewPager mViewPager;
     private List<Fragment> mList;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
         initView();
 
         init();
